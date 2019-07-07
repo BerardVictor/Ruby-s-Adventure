@@ -12,11 +12,15 @@ public class BotController : MonoBehaviour
 
 	float timer;
 	int direction = 1;
+
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,10 +39,16 @@ public class BotController : MonoBehaviour
         if (vertical)
         {
         	position.y = position.y + Time.deltaTime * BotSpeed * direction;
+            
+            animator.SetFloat("MoveX", 0);
+            animator.SetFloat("MoveY", direction);
         }
         else
         {
         	position.x = position.x + Time.deltaTime * BotSpeed * direction;
+        
+            animator.SetFloat("MoveX", direction);
+            animator.SetFloat("MoveY", 0);
         }
 
         rigidbody2d.MovePosition(position);

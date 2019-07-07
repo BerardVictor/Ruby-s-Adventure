@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 394265524361507504}
   - component: {fileID: 198108141878963940}
   - component: {fileID: 4498781911465877717}
+  - component: {fileID: 4258238862192024057}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2772173226f4e8e45bbf003c032ad486, type: 3}
-  m_Color: {r: 1, g: 0.2971698, b: 0.43409714, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,3 +147,22 @@ MonoBehaviour:
   BotSpeed: 5
   vertical: 0
   changeTime: 2
+--- !u!95 &4258238862192024057
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483246073788619420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5934cdd54b3bc8141861804095f17157, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
