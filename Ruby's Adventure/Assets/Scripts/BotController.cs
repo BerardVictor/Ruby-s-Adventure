@@ -7,6 +7,8 @@ public class BotController : MonoBehaviour
 	public float BotSpeed = 5.0f;
 	public bool vertical;
 	public float changeTime = 2.0f;
+    public bool broken = true;
+    public ParticleSystem smokeEffect;
 
 	Rigidbody2D rigidbody2d;
 
@@ -26,6 +28,11 @@ public class BotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!broken)
+        {
+            return;
+        }
+
     	timer -= Time.deltaTime;
 
     	if (timer < 0)
@@ -64,4 +71,12 @@ public class BotController : MonoBehaviour
 			player.ChangeHealth(-1);
 		}
 	}
+    
+    public void Fix()
+    {
+        animator.SetTrigger("Fixed");
+        broken = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        smokeEffect.Stop();
+    }
 }
