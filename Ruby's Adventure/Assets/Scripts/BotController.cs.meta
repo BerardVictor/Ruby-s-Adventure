@@ -3,7 +3,9 @@ guid: e9ae23c18d4018f40a31e52981f3516d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - smokeEffect: {instanceID: 0}
+  - fixClip: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,6 +10,9 @@ public class BotController : MonoBehaviour
     public bool broken = true;
     public ParticleSystem smokeEffect;
 
+//    AudioSource audioSource;
+//    public AudioClip fixClip;
+
 	Rigidbody2D rigidbody2d;
 
 	float timer;
@@ -23,13 +26,20 @@ public class BotController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+//        audioSource = GetComponent<AudioSource>();
     }
+
+//    public void PlaySound(AudioClip clip)
+//    {
+//       audioSource.PlayOneShot(clip);
+//    }
 
     // Update is called once per frame
     void Update()
     {
         if(!broken)
         {
+//            PlaySound(fixClip);
             return;
         }
 
@@ -72,6 +82,7 @@ public class BotController : MonoBehaviour
 		}
 	}
     
+
     public void Fix()
     {
         animator.SetTrigger("Fixed");

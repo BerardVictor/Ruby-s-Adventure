@@ -8,6 +8,10 @@ public class RubyController : MonoBehaviour
 
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
+
+    AudioSource audioSource;
+    public AudioClip projectileClip;
+    public AudioClip rubyhitClip;
     
     public int health { get { return currentHealth;}}
     int currentHealth;
@@ -29,8 +33,14 @@ public class RubyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         currentHealth = maxHealth;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,7 +48,7 @@ public class RubyController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector2 move = new Vector2(horizontal, vertical);
-        
+
         if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
         {
             lookDirection.Set(move.x, move.y);
@@ -55,6 +65,7 @@ public class RubyController : MonoBehaviour
   
         rigidbody2d.MovePosition(position);
 
+
         if (isInvicible)
         {
             invicibleTimer -= Time.deltaTime;
@@ -62,26 +73,45 @@ public class RubyController : MonoBehaviour
                 isInvicible = false;
         }
 
+
         if(Input.GetKeyDown(KeyCode.C))
         {
            Launch();
+           PlaySound(projectileClip);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPCs"));
+            if (hit.collider != null)
+            {
+                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                if (character != null)
+                {
+                    character.DisplayDialog();
+                }
+            }
         }
     }
+
 
     public void ChangeHealth(int amount)
     {
         if (amount < 0)
         {
             if (isInvicible)
+            {
                 return;
-
+            }
             isInvicible = true;
+            PlaySound(rubyhitClip);
             invicibleTimer = timeInvincible;
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
-        Debug.Log(currentHealth + "/" + maxHealth);
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
 
     void Launch()
