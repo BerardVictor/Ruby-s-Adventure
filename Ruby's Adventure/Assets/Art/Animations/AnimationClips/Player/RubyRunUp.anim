@@ -77,4 +77,12 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: a20c77ecd5de9eb4a98731b45ad84c3e,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

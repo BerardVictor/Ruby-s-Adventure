@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 198108141878963940}
   - component: {fileID: 4498781911465877717}
   - component: {fileID: 4258238862192024057}
-  - component: {fileID: 7497418389841366767}
+  - component: {fileID: 7620022421558961857}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028194427, y: -0.8211585}
+  m_Offset: {x: -0.028194427, y: 0.8178086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2442551, y: 0.9176829}
+  m_Size: {x: 1.2442551, y: 1.5732698}
   m_EdgeRadius: 0
 --- !u!50 &198108141878963940
 Rigidbody2D:
@@ -151,6 +151,7 @@ MonoBehaviour:
   changeTime: 3
   broken: 1
   smokeEffect: {fileID: 7084445160606243145}
+  fixClip: {fileID: 0}
 --- !u!95 &4258238862192024057
 Animator:
   serializedVersion: 3
@@ -170,7 +171,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &7497418389841366767
+--- !u!82 &7620022421558961857
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,18 +181,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6bfbad8ffdf387d4e87e8fa07b62f7c1, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 6
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -286,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 2251318757059669746, guid: 2434a1f805d16f64da997f7d7b878e51,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2251318757059669746, guid: 2434a1f805d16f64da997f7d7b878e51,
         type: 3}

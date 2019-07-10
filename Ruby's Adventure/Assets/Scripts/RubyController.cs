@@ -6,12 +6,15 @@ public class RubyController : MonoBehaviour
 {
     public float RubySpeed = 8.0f;
 
+    public GameObject rubyChar;
+
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
 
     AudioSource audioSource;
     public AudioClip projectileClip;
     public AudioClip rubyhitClip;
+    public AudioClip rubywalkClip;
     
     public int health { get { return currentHealth;}}
     int currentHealth;
@@ -73,6 +76,10 @@ public class RubyController : MonoBehaviour
                 isInvicible = false;
         }
 
+        if (currentHealth == 0)
+        {
+            currentHealth += 6;
+        }
 
         if(Input.GetKeyDown(KeyCode.C))
         {
@@ -119,7 +126,7 @@ public class RubyController : MonoBehaviour
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
-        projectile.Launch(lookDirection, 300);
+        projectile.Launch(lookDirection, 500);
 
         animator.SetTrigger("Launch");
     }

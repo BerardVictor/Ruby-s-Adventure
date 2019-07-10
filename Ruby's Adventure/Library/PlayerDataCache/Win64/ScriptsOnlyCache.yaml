@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BotController
+    - BoxController
     - DamageableController
     - HeathCollectible
     - NonPlayerCharacter
@@ -21,7 +22,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -34,14 +34,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -62,6 +59,8 @@ ScriptsOnlyBuild:
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
@@ -85,48 +84,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 570}
+      Script: {instanceID: 594}
     - Class: 114
-      Script: {instanceID: 10962}
+      Script: {instanceID: 10986}
     - Class: 114
-      Script: {instanceID: 11094}
+      Script: {instanceID: 11118}
     - Class: 114
-      Script: {instanceID: 11182}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11202}
+      Script: {instanceID: 11226}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11684}
+      Script: {instanceID: 11668}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11694}
     - Class: 114
-      Script: {instanceID: 12348}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 12366}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 12426}
+      Script: {instanceID: 12134}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12376}
     - Class: 114
-      Script: {instanceID: 12586}
+      Script: {instanceID: 12392}
     - Class: 114
-      Script: {instanceID: 12618}
+      Script: {instanceID: 12394}
     - Class: 114
-      Script: {instanceID: 12662}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 13034}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 12614}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 12646}
     - Class: 114
-      Script: {instanceID: 15028}
+      Script: {instanceID: 12690}
     - Class: 114
-      Script: {instanceID: 21874}
+      Script: {instanceID: 12710}
+    - Class: 114
+      Script: {instanceID: 12872}
+    - Class: 114
+      Script: {instanceID: 13064}
+    - Class: 114
+      Script: {instanceID: 13078}
+    - Class: 114
+      Script: {instanceID: 13092}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -154,41 +163,6 @@ ScriptsOnlyBuild:
     - Class: 483693784
       Script: {instanceID: 0}
     - Class: 1839735485
-      Script: {instanceID: 0}
-    Assets/Scenes/SampleScene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 109
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 11668}
-    - Class: 114
-      Script: {instanceID: 12348}
-    - Class: 114
-      Script: {instanceID: 12364}
-    - Class: 114
-      Script: {instanceID: 12842}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -271,7 +245,7 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: 6323037a1882228196589147d164ec94
+      Hash: 398289b56ea7c662aad3adb1d945d41b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BotController
@@ -389,6 +363,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineFreeLook
+  - hash:
+      serializedVersion: 2
+      Hash: 1292eee39418dadde139324765b6bfe9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIHealthBar
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -547,6 +527,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 3520d9b963d9c53fa50efe61cf8f7ffe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NonPlayerCharacter
+  - hash:
+      serializedVersion: 2
       Hash: 56df1fa7cea034df9863fe5a24200a32
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -697,7 +683,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 0ea963e3dd5f34e40be01d965100f0d5
+      Hash: 6265abe310fc9543fa83cbbfa7d1b2c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RubyController
@@ -713,6 +699,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: c7149f0f80ea394492df63685db37844
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BoxController
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -863,21 +855,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 1292eee39418dadde139324765b6bfe9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIHealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: 3520d9b963d9c53fa50efe61cf8f7ffe
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NonPlayerCharacter
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
   - Assets/MainScene.unity
   playerPath: D:/Unity/UnityProject/Ruby-s-Adventure/Ruby's Adventure/Build/Ruby's
     Adventure.exe
