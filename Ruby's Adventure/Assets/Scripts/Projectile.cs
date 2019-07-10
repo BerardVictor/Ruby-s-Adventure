@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
     	{
         	Destroy(gameObject);
     	}
+
     }
 
    	public void Launch(Vector2 direction, float force)

@@ -121,3 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c87537cf9e35614387b0e6e6b5d609d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healDrop: {fileID: 2089037782779443537, guid: 06e964e2a94f75248b89af22f18355bf,
+    type: 3}

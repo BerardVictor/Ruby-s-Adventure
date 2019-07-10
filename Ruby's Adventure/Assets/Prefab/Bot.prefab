@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483246073788619420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.15, y: -0.98, z: 0}
+  m_LocalPosition: {x: -1.15, y: -0.98, z: 1}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 7084445160606243146}
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ae23c18d4018f40a31e52981f3516d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BotSpeed: 4
-  vertical: 1
+  BotSpeed: 2
+  vertical: 0
   changeTime: 3
   broken: 1
   smokeEffect: {fileID: 7084445160606243145}
@@ -274,6 +274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1483246073788619394}
     m_Modifications:
+    - target: {fileID: 2251318757059669759, guid: 2434a1f805d16f64da997f7d7b878e51,
+        type: 3}
+      propertyPath: m_Name
+      value: Smoke Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 2251318757059669746, guid: 2434a1f805d16f64da997f7d7b878e51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -328,11 +333,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2251318757059669759, guid: 2434a1f805d16f64da997f7d7b878e51,
-        type: 3}
-      propertyPath: m_Name
-      value: Smoke Effect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2434a1f805d16f64da997f7d7b878e51, type: 3}

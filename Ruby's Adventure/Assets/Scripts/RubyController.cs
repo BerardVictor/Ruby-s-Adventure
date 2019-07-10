@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
-    public float RubySpeed = 8.0f;
+    public Vector2 respawnPoint;
 
-    public GameObject rubyChar;
+    public float displayTime = 4.0f;
+    public GameObject dialogBox;
+    float timerDisplay;
+
+    public float RubySpeed = 8.0f;
 
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
@@ -22,7 +26,6 @@ public class RubyController : MonoBehaviour
     float invicibleTimer;
     
     public GameObject projectilePrefab;
-
     Animator animator;
     Vector2 lookDirection = new Vector2(1,0);
 
@@ -38,6 +41,9 @@ public class RubyController : MonoBehaviour
         currentHealth = maxHealth;
 
         audioSource = GetComponent<AudioSource>();
+
+        dialogBox.SetActive(false);
+        timerDisplay = -1.0f;
     }
 
     public void PlaySound(AudioClip clip)
@@ -76,11 +82,6 @@ public class RubyController : MonoBehaviour
                 isInvicible = false;
         }
 
-        if (currentHealth == 0)
-        {
-            currentHealth += 6;
-        }
-
         if(Input.GetKeyDown(KeyCode.C))
         {
            Launch();
@@ -100,8 +101,29 @@ public class RubyController : MonoBehaviour
                 }
             }
         }
+
+        if (currentHealth == 0)
+        {
+            DisplayDialog();
+            ChangeHealth(+5);
+            gameObject.transform.position = respawnPoint;
+        }
+
+        if (timerDisplay >= 0)
+        {
+            timerDisplay -= Time.deltaTime;
+            if (timerDisplay < 0)
+            {
+                dialogBox.SetActive(false);
+            }
+        }
     }
 
+    public void DisplayDialog()
+    {
+        timerDisplay = displayTime;
+        dialogBox.SetActive(true);
+    }
 
     public void ChangeHealth(int amount)
     {

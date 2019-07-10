@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b6d031b138e68408c2c50e235a9bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robotFixed: 0
 --- !u!1001 &3973979959236469929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,11 +152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6884252165480493928}
     m_Modifications:
-    - target: {fileID: 38907014503804389, guid: 01284b263a2d1394f9a9b42f87bff8fe,
-        type: 3}
-      propertyPath: m_Name
-      value: BotHit
-      objectReference: {fileID: 0}
     - target: {fileID: 7009571772168715476, guid: 01284b263a2d1394f9a9b42f87bff8fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -210,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38907014503804389, guid: 01284b263a2d1394f9a9b42f87bff8fe,
+        type: 3}
+      propertyPath: m_Name
+      value: BotHit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01284b263a2d1394f9a9b42f87bff8fe, type: 3}

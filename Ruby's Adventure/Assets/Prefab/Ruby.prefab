@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2215567736378724324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5decc0cd30e1e44ca1e88bfe7da0818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnPoint: {x: 0, y: 0}
+  displayTime: 4
+  dialogBox: {fileID: 0}
   RubySpeed: 3
-  rubyChar: {fileID: 2215567736378724324}
   maxHealth: 5
   timeInvincible: 1
   projectileClip: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
